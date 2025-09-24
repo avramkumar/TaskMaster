@@ -35,7 +35,7 @@ export default function Login() {
     }
   }, [location, navigate]);
 
-    const handleLogin = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setError(null);
 
@@ -74,8 +74,6 @@ export default function Login() {
       setLoading(false);
     }
   };
-
-
 
   const handleGoogleLogin = async () => {
     setError(null);
@@ -118,15 +116,16 @@ export default function Login() {
     }
   };
 
-
-
-
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-purple-50 to-purple-100">
       {/* Left Side - Login Form */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-16 py-8 lg:py-0">
         <div className="w-full max-w-md">
-          <img src="/logo.jpg" alt="Logo" className="w-24 sm:w-36 mb-6 sm:mb-8 mx-auto" />
+          <img 
+            src={`${import.meta.env.BASE_URL}logo.jpg`} 
+            alt="Logo" 
+            className="w-24 sm:w-36 mb-6 sm:mb-8 mx-auto" 
+          />
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 text-center">Welcome back</h2>
           <p className="text-gray-600 mb-6 text-center">Please enter your details</p>
 
@@ -237,7 +236,7 @@ export default function Login() {
             className="w-full bg-white text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors border border-gray-300 flex items-center justify-center"
           >
             <img
-              src="/google-color.svg"
+              src={`${import.meta.env.BASE_URL}google-color.svg`}
               alt="Google"
               className="w-5 h-5 mr-3 bg-white rounded-full p-[1px]"
             />
@@ -257,7 +256,7 @@ export default function Login() {
       <div
         className="hidden lg:block lg:w-1/2 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('bg.jpg')`,
+          backgroundImage: `url('${import.meta.env.BASE_URL}bg.jpg')`,
         }}
       />
     </div>
